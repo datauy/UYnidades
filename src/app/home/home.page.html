@@ -13,8 +13,14 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="text-input-container">
+    <select [(ngModel)]="unit" (ngModelChange)="dataChanged('original')">
+      <option value="" disabled selected>Seleccione una unidad</option>
+      <option value="antel-arena">Antel Arena</option>
+      <option value="tele-comunicaciones">Torre de las Tele Comunicaciones</option>
+      <option value="otro">Otro</option>
+    </select>
   </div>
+  <input class="text-input" type="text" placeholder="Valor en dólares" [(ngModel)]="original" (ngModelChange)="dataChanged('original')">
+  <input class="text-input" type="text" placeholder="Valor convertido" [(ngModel)]="converted" (ngModelChange)="dataChanged('converted')">
 </ion-content>
